@@ -286,7 +286,7 @@ IP_ROUTE_SCOPE
     @plugin.stub(:popen4).with("arp -an")
     Ohai::Log.should_receive(:warn).with(/unable to detect/).exactly(3).times
     
-    %w{ counters network_basic darwin/hostname hostname network }.each do |plgn|
+    %w{ darwin/hostname hostname network }.each do |plgn|
       key = plgn.gsub("/", "_")
       @loader.load_plugin(File.expand_path("#{plgn}.rb", PLUGIN_PATH), key)
       p = @ohai.plugins[key][:plugin].new(@ohai)
