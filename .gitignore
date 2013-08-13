@@ -3,3 +3,6 @@ Gemfile.lock
 pkg/
 tmp/
 coverage/
+
+#IDE
+.idea
